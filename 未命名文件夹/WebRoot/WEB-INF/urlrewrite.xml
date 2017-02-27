@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>    
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 2.6//EN"    
+"http://tuckey.org/res/dtds/urlrewrite2.6.dtd">
+<urlrewrite>
+<!-- 
+	<rule>
+		<from>/test.html</from>
+		<to type="redirect">%{context-path}/page.html</to>
+	</rule>
+	<rule>
+		<from>/thread_([0-9]+)_([0-9]+)_([0-9]+).html</from>
+		<to>/thread?tid=$1&amp;page=$2&amp;pageSize=$3</to>
+	</rule>
+ -->
+ 	<rule>
+		<from>/huodong/([0-9]+).html</from>
+		<to>/huodong?id=$1</to>
+	</rule>
+ 	<rule>
+		<from>/page/([0-9]+).html</from>
+		<to>/page?id=$1</to>
+	</rule>
+	<rule>
+		<from>/page/([0-9]+)_([0-9]+).html</from>
+		<to>/page?id=$1&amp;flag=$2</to>
+	</rule>
+	<rule>
+		<from>/aunt/([0-9]+).html</from>
+		<to>/aunt?aunt_id=$1</to>
+	</rule>
+ 	
+ 	<rule>
+		<from>/front/([a-zA-Z_0-9]+)/([0-9]+).html</from>
+		<to>/front?tag=$1&amp;id=$2</to>
+	</rule>
+ 	
+	<rule>
+		<from>/([a-zA-Z_0-9]+)/([0-9]+).html</from>
+		<to>/recept?action=$1&amp;menuId=$2</to>
+	</rule>
+		
+	<rule>
+		<from>/([a-zA-Z_0-9]+)/([0-9]+)_([0-9]+).html</from>
+		<to>/recept?action=$1&amp;menuId=$2&amp;page=$3</to>
+	</rule>
+	
+	
+
+	<rule>
+		<from>/siteMap.xml</from>
+		<to>/siteMap</to>
+	</rule>
+	
+</urlrewrite>

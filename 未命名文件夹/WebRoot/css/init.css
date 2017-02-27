@@ -1,0 +1,48 @@
+﻿﻿html {
+    height: 100%;
+}
+body,html {
+    font-family: "Microsoft YaHei","Lucida Sans Unicode","Myriad Pro","Hiragino Sans GB","Heiti SC",Verdana,simsun;
+    min-height: 100%;
+	margin: 0;
+    padding: 0;
+	overflow:hidden;overflow-y:auto;
+}
+@font-face {
+		 font-family:"Microsoft YaHei","Lucida Sans Unicode","Myriad Pro","Hiragino Sans GB","Heiti SC",Verdana,simsun;
+		}
+ul,ol,li,dl{list-style-type:none; margin:0; padding:0;}
+img{border:0;}
+ul, ol {
+    margin: 0;
+	padding:0;
+}
+a{ color:#D0B065}
+.clear{ clear:both}
+
+
+/*登录*/
+.user_c{ width:100%; clear:both}
+.user_c_rg{ width:100%; clear:both}
+.user_c_rg .user_account{ padding:0 30px; border-bottom:1px solid #d2d2d2;float:left; width:100%; line-height:2em;}
+.user_c_rg .user_account span{ float:left; width:100%; font-weight:600;}
+
+.user_c_rg .user_main_tip{padding:15px 20px 20px 30px;float:left;}
+.user_c_rg .user_main_tip .title{ width:100%; height:2em; line-height:2em; font-size:18px; font-weight:600;}
+.user_c_rg .user_main_tip .title span{color:#f00;font-size:16px;font-weight:500;}
+.user_c_rg .user_main_tip .title_z{ width:100%;height:3em; line-height:3em; font-size:12px; color:#999;}
+.user_c_rg .user_main_tip .title_z b{ color:#cda951; font-weight:600; font-size:18px; margin-right:20px;}
+.user_c_rg .user_main_tip .user_li_0{ float:left; width:100%; }
+.user_c_rg .user_main_tip .user_li_0 li{ float:left; width:300px; margin:10px 10px 0 0 ;background:#fff}
+.user_c_rg .user_main_tip .user_li_0 li a{float:left; width:298px; height:140px;  border:1px solid #d2d2d2; display:block; position:relative}
+.user_c_rg .user_main_tip .user_li_0 li a.a1{ background:url(../images/user_m_1.jpg) 30px center no-repeat}
+.user_c_rg .user_main_tip .user_li_0 li a.a2{background:url(../images/user_m_2.jpg) 30px center no-repeat}
+.user_c_rg .user_main_tip .user_li_0 li a.a3{background:url(../images/user_m_3.jpg) 30px center no-repeat}
+.user_c_rg .user_main_tip .user_li_0 li a.a4{background:url(../images/user_m_4.jpg) 30px center no-repeat}
+.user_c_rg .user_main_tip .user_li_0 li a.a5{background:url(../images/user_m_5.jpg) 30px center no-repeat}
+.user_c_rg .user_main_tip .user_li_0 li a.a6{background:url(../images/user_m_6.jpg) 30px center no-repeat}
+.user_c_rg .user_main_tip .user_li_0 li a span{ position:absolute; left:90px; top:40px; line-height:2em;font-size:14px;  color:#666}
+.user_c_rg .user_main_tip .user_li_0 li a span b{ font-weight:500;font-size:15px;}
+.user_c_rg .user_main_tip .user_li_0 li a span .cor_1{ color:#f00}
+.tips_cr{float:left; width:100%;line-height:30px; padding:20px 0}
+
