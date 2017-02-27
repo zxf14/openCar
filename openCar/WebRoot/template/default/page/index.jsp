@@ -33,6 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  
   	<jsp:include  page="/template/${folder.tpl.folder}/page/head.jsp"/>
   	<div class="header_banner">
 			<div class="header_banner_box">
@@ -40,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<ul class="header_banner_list">
 						<c:forEach items="${slide.slideList}" var="slide" varStatus="status">
 							<li>
-								<a href="${slide.url}" style="background: url(<%=basePath%>${slide.img}) no-repeat center top;"></a>
+								<a href="${slide.url}" style="background: url('./${slide.img}') no-repeat center top;"></a> 
 							</li>
 						</c:forEach>
 					</ul>
