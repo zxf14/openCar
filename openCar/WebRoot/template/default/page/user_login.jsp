@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<ul class="login_now">
 							<li><input type="text" class="lname_icon" name="tel" placeholder="请输入手机号" /></li>
 							<li><input type="password" class="lpass_icon" name="pass" placeholder="请输入登录密码" /></li>
-							<li class="pass_regist"><a>忘记登录密码</a>  <a href="<%=basePath%>goPetition/10.html" class="right">免费注册&gt;&gt;</a></li>
+							<li class="pass_regist"> <a href="<%=basePath%>goPetition/10.html" class="right">免费注册&gt;&gt;</a></li>
 							<li><div onclick="userLogin()" class="login_btn">登&nbsp;&nbsp;录</div></li>
 							<!-- <li class="other_login"><a href="#" class="login_qq">QQ登录</a><a href="#" class="login_wx">微信登录</a></li> -->
 						</ul>

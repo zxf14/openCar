@@ -36,11 +36,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 					<form  class="login_form" name="loginForm" id="loginForm" action="javscript:void(0)" method="post">
 						<ul class="login_now">
-							<li><input type="text" class="lname_icon" name="tel" placeholder="请输入手机号" /></li>
-							<li><input type="password" class="lpass_icon" name="pass" placeholder="请输入登录密码" /></li>
-							<li class="pass_regist"><a>忘记登录密码</a>  <a href="<%=basePath%>goPetition/10.html" class="right">免费注册&gt;&gt;</a></li>
+							<li><input type="text" class="lname_icon" name="tel" placeholder="请输入手机号"  onkeyup="javascript:checkTel(this)"/></li>
+							<li><input type="password" class="lpass_icon" name="pass" placeholder="请输入登录密码"   onkeyup="javascript:checkPass(this)"/></li>
+							<li class="pass_regist">  <a href="<%=basePath%>goPetition/10.html" class="right">免费注册&gt;&gt;</a></li>
 							<li><div onclick="userLogin()" class="login_btn">登&nbsp;&nbsp;录</div></li>
 							<!-- <li class="other_login"><a href="#" class="login_qq">QQ登录</a><a href="#" class="login_wx">微信登录</a></li> -->
+							<li><div id="wrong" class="wrong"></div></li>
 						</ul>
 					</form>
 					<div class="login_mobiled"></div>
@@ -60,11 +61,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				success:function(data){
 					alert(data.tip);
 					if(data.status==200){
-						window.location.href="<%=basePath%>pc/pcUserIndex";
+						window.location.href="<%=basePath%>index/1.html";
 					}
 				}
 			}); 
 		}
+
+	
+		function checkTel(inputobj){
+			//alert(telCheck("15061503272"));
+			var tel = inputobj.value;
+			var wrong = document.getElementById("wrong");
+			if(!telCheck(tel)){
+				wrong.innerHTML = "手机号码格式为11位";
+			}else {
+				wrong.innerHTML = "";
+			}
+		}
+
+		function checkPass(inputobj) 
+		{
+			var pass = inputobj.value;
+			//alert(pass.length);
+			var wrong = document.getElementById("wrong");
+			if(pass.length>15){
+				wrong.innerHTML = "密码不得超过15位";
+			}else {
+				wrong.innerHTML = "";
+			}
+		}
+		
+		//判断输入电话号码是否规范
+		function telCheck(phone)
+		{
+			 var partten = /^1[3,5,8]\d{9}$/;
+	          var fl=false;
+	          if(partten.test(phone))
+	          {
+	               //alert('是手机号码');
+	               return true;
+	          }
+	          else
+	          {
+	               return false;
+	               //alert('不是手机号码');
+	          }
+		}
+
+	
 	</script>
   </body>
 </html>

@@ -4,6 +4,10 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+
+<style>
+a.focus{color:#1e3264;}
+</style>
 <jsp:useBean id="navigat" scope="page" class="com.weishang.bean.ReceptBean"/><!-- 主导航 -->
 <jsp:useBean id="net" scope="page" class="com.weishang.bean.ReceptBean"/><!--网站基本信息-->
 <jsp:useBean id="folder" scope="page" class="com.weishang.bean.ReceptBean"/><!-- 当前正在使用的模板 -->
@@ -28,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="header_menu_bg">
 		<div class="mainbox header_menu_info">
 			<a href="<%=basePath%>" class="header_logo"><img src="<%=basePath%>${net.net.logo}" /></a>
-			<ul class="header_menu">
+			<ul class="header_menu" id="subnav">
 				<jsp:setProperty property="addr" value="1" name="navigat"/>
 				<jsp:setProperty property="host" value="<%=basePath%>" name="navigat"/>
 				<c:forEach items="${navigat.receptList}" var="recept" varStatus="status">
@@ -36,9 +40,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<a href="${recept.modUrl}">${recept.name}</a>
 					</li>
 				</c:forEach>
-				<li class="app"><span class="header_menu_mobile"><a href="javascript:void(0)">手机版</a></span></li>
+<!-- 				<li class="app"><span class="header_menu_mobile"><a href="javascript:void(0)">手机版</a></span></li> -->
 				<li class="phone"><img src="<%=basePath%>template/${folder.tpl.folder}/images/header_logo_phone.jpg" /></li>
 				
 			</ul>
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+	 var pn = location.pathname;
+	    var as = document.getElementById('subnav').getElementsByTagName('a'),find=false;
+	    for (var i = 0, j = as.length; i < j; i++)
+	        if (as[i].href.indexOf(pn) != -1) { 
+		        as[i].className = 'focus';
+		        as[i].onmouseover =   function()
+		        {
+		        	   as[i].style.color = "#1e3264";
+		        	};
+		        find = true; 
+		        break; 
+		    }
+	</script>

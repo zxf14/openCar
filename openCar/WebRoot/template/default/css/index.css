@@ -870,7 +870,11 @@ color:#fff;
 }
 .pass_regist {
 	padding: 0px 10px;
-	margin: 10px 0px 20px;
+	margin: 10px 0px 40px;
+}
+.wrong {
+	color: #ff0000;
+	margin-top: 20px;
 }
 .regist_now li.pass_regist input[type="checkbox"]{    vertical-align: middle;margin-right:3px;
     width: 14px;

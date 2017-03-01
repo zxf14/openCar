@@ -30,6 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="${recept.keywords}">
 	<meta http-equiv="description" content="${recept.descript}">
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>template/${folder.tpl.folder}/css/index.css">
+
   </head>
   
   <body>

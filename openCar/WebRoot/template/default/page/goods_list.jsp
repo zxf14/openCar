@@ -219,7 +219,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</li>
 									<li class="rig_b">
 										<!--  <div class="shijijiage">价格<span>${goods.marketPrice}</span></div>-->
-										<a class="order_btn" href="<%=basePath%>front/goodsDetail/${goods.goodsId}.html">预 定</a>
+										<a class="order_btn" href="<%=basePath%>front/goodsDetail/${goods.goodsId}.html">查看详情</a>
 									</li>
 								</ul>
 							</div>				
