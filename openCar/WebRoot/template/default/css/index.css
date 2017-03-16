@@ -1265,6 +1265,17 @@ color:#fff;
 	line-height: 37px;
 	font-size: 22px;
 }
+.order_a {
+	width: 110px;
+	height:35px;
+	line-height: 35px;
+	text-align:center;
+	color:#fff;
+	font-size:16px;
+	background-color: #438bdd;
+	display:block;
+	border-radius:5px;
+}
 .order_car {
 	width: 250px;
 	height: 43px;
@@ -1521,22 +1532,30 @@ color:#fff;
 	padding: 5px 20px 5px 20px;
 	color:#828282;
 }
-.cartype_info li.rig_b{vertical-align:middle; text-align:center;padding:0; float:right;width:120px;}
+li.rig_b {
+	margin-top:23px;
+	padding-left:5px;
+	
+}
+.cartype_info li.rig_b{vertical-align:middle; text-align:center;float:right;}
 .cartype_info li.rig_b input[type="checkbox"]{vertical-align:middle;}
 .cartype_info li.rig_b .rig_b_t{ margin-top:10px;}
 .cartype_info li.rig_b .shijijiage{width:100%;word-wrap: break-word; word-break: normal;line-height:18px; }
 .cartype_info li.rig_b .shijijiage span{color: #f30;font-size:16px;font-weight:600;display:block;line-height:30px;}
 .cartype_info li.oncl_mon_wid {
-	width:330px;
-	padding: 5px 0;
+	/*width:330px;*/
+	margin-top:-33px;
+	margin-right:9px;
+	padding: 0 0 5px 0;
+	float:right
 }
 .oncl_mon,.oncl_mon_1 {
-	width: 200px;
+	width: 180px;
 	height: 40px;
 	line-height: 40px;
 	float: right;
 	padding: 0px;
-	cursor: pointer;
+	/*cursor: pointer;*/
 	z-index:100;
 	position: relative;
 	overflow:hidden;

@@ -17,24 +17,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  	<jsp:useBean id="type" scope="page" class="com.weishang.my.bean.MyBean"/><!-- 类型-->
  	<jsp:useBean id="cat" scope="page" class="com.weishang.my.bean.MyBean"/><!-- 分类-->
  	<jsp:useBean id="promt" scope="page" class="com.weishang.my.bean.MyBean"/><!--活动-->
- 	
+
     <title>${recept.title}</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="${recept.keywords}">
 	<meta http-equiv="description" content="${recept.descript}">
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>template/${folder.tpl.folder}/css/index.css">
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>template/${folder.tpl.folder}/css/page.css">
   </head>
-  
+
   <body>
   	<jsp:include  page="/template/${folder.tpl.folder}/page/head.jsp"/>
-	<div class="clear contain">			
+	<div class="clear contain">
 		<ul class="clear rent_flow">
 			<li>
 				<span class="left num_icon">1</span>
-				<p class="left mien_tit">预订车辆</br><font>提前为您预留</font></p>					
+				<p class="left mien_tit">预订车辆</br><font>提前为您预留</font></p>
 			</li>
 			<li style="border-left:0px solid red">
 				<span class="left num_icon">2</span>
@@ -116,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</c:if>
 						</ul>
 					</div>
-					
+
 					<div class="cartype_list1">
 						<label class="left type_til">价&nbsp;&nbsp;格</label>
 						<ul class="left car_type_list">
@@ -180,7 +180,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="cartype_tab"><a href="<%=basePath%>goods?brand_id=${brand_id}&type_id=${type_id}&cat_id=${cat_id}&menuId=${menuId}&price=${price}&order=xs">按租金</a></div>
 						<div class="cartype_tab_sort"><a href="<%=basePath%>goods?brand_id=${brand_id}&type_id=${type_id}&cat_id=${cat_id}&menuId=${menuId}&price=${price}&order=extension">按销量</a></div>
 					</c:if>
-					
+
 					<div class="cartype_tab cartype_tab_full"></div>
 					<div class="clear"></div>
 					<!--循环-->
@@ -199,30 +199,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div>
 										<c:forEach items="${goods.attrList}" var="attr" varStatus="status">
 											<c:if test="${attr.name=='排量'}">
-												${attr.value}/
+												排量：${attr.value}
 											</c:if>
-											
+
 											<c:if test="${attr.name=='变速箱'}">
 												${attr.value}
 											</c:if>
 											<c:if test="${attr.name=='座位数' || attr.name=='座位'}">
-												${attr.value}
+												座位：${attr.value}&nbsp;&nbsp;
 											</c:if>
 										</c:forEach>
-										</br>${goods.goodsType.name}</div>
-									</li>
+										</br>${goods.goodsType.name}
+										</br>日租：<span class="orange">￥${goods.userPrice}</span>/日均&nbsp;&nbsp;周租：<span class="orange">￥${goods.consPrice}</span>/日均&nbsp;&nbsp;月租：<span class="orange">￥${goods.vipPrice}</span>/日均&nbsp;&nbsp;</div>
 									<li class="oncl_mon_wid">
-										<div class="oncl_border_1 oncl_mon"><span class="or_blue span_cont">￥<span class="money_big">${goods.shopPrice}</span>/预交定金<a class="ren_sjx"></a></span></div>	
-										<div class="mon_week">
+										<div class="oncl_border_1 oncl_mon"><span class="or_blue span_cont">￥<span class="money_big">${goods.shopPrice}</span>/预交定金</span></div>
+<!-- 										<div class="mon_week">
 											<div class="left">日租：<span class="orange">￥${goods.userPrice}</span>/日均&nbsp;&nbsp;周租：<span class="orange">￥${goods.consPrice}</span>/日均&nbsp;&nbsp;月租：<span class="orange">￥${goods.vipPrice}</span>/日均</div>
-										</div>					
+										</div>		 -->
 									</li>
 									<li class="rig_b">
 										<!--  <div class="shijijiage">价格<span>${goods.marketPrice}</span></div>-->
-										<a class="order_btn" href="<%=basePath%>front/goodsDetail/${goods.goodsId}.html">查看详情</a>
+										<a class="order_a" href="<%=basePath%>front/goodsDetail/${goods.goodsId}.html">查看详情</a>
 									</li>
 								</ul>
-							</div>				
+							</div>
 						</div>
 					</c:forEach>
 					<!--循环结束-->
@@ -243,25 +243,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<jsp:include  page="/template/${folder.tpl.folder}/page/web_right.jsp"/>
 		</div>
 	</div>
-  	<jsp:include  page="/template/${folder.tpl.folder}/page/foot.jsp"/> 
+  	<jsp:include  page="/template/${folder.tpl.folder}/page/foot.jsp"/>
     <script type="text/javascript" src="<%=basePath%>template/${folder.tpl.folder}/js/jquery.min.js"></script>
 	<script>
 	/*列表交互*/
 	+(function(){
-		$(function(){
+		/*$(function(){
 			$(".cartype_lis1").find(".oncl_mon_wid").hover(function(){
 				//alert();
 				_this = $(this);
 				_this.find(".oncl_mon").removeClass("oncl_border_1");
 				_this.find(".oncl_mon").addClass("oncl_border");
 				_this.find(".mon_week").show();
-				
+
 			},function(){
 				_this.find(".oncl_mon").removeClass("oncl_border");
 	            _this.find(".oncl_mon").addClass("oncl_border_1");
 				_this.find(".mon_week").hide();
-			})
-			
+			}) */
+
 		/*
 		$(".cartype_lis1").find(".oncl_mon").hover(function(){
 				$ = $(this);
@@ -274,10 +274,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$(".mon_week").css("display","none");
 	        });
 		*/
-			
+
 		});
 	})();
-	
+
 	</script>
   </body>
 </html>
