@@ -210,23 +210,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												${attr.value}
 											</c:if>
 										</c:forEach>
-										</br>${goods.goodsType.name}</div>
+										</br>${goods.goodsType.name}
+										</br>日租：<span class="orange">￥${goods.userPrice}</span>/日均&nbsp;&nbsp;周租：<span class="orange">￥${goods.consPrice}</span>/日均&nbsp;&nbsp;月租：<span class="orange">￥${goods.vipPrice}</span>/日均&nbsp;&nbsp;</div>
+									<li class="oncl_mon_wid">
+										<div class="oncl_border_1 oncl_mon"><span class="or_blue span_cont">￥<span class="money_big">${goods.shopPrice}</span>/预交定金</span></div>
 									</li>
-									<c:if test="${sp=='x'}">
-										<li class="oncl_mon_wid">
-											<div class="oncl_border_1 oncl_mon"><span class="or_blue span_cont">￥<span class="money_big">${goods.shopPrice}</span>/三环内<a class="ren_sjx"></a></span></div>	
-											<div class="mon_week">
-													<div class="left">三环内：<span class="orange">￥${goods.shopPrice}</span>&nbsp;&nbsp;三环外：<span class="orange">￥${goods.marketPrice}</span></div>
-											</div>			
-										</li>
-									</c:if>
-									<c:if test="${sp=='h'}">
-										<li class="oncl_mon_wid">
-											<div class="oncl_mon_1"><span class="or_blue span_cont">￥<span class="money_big">${goods.shopPrice}</span>/次</span></div>	
-										</li>
-									</c:if>
 									<li class="rig_b">
-										<a class="order_btn" href="<%=basePath%>front?tag=goodsDetail&id=${goods.goodsId}&sp=${sp}">预 定</a>
+										<!--  <div class="shijijiage">价格<span>${goods.marketPrice}</span></div>-->
+										<a class="order_a" href="<%=basePath%>front/goodsDetail/${goods.goodsId}.html">查看详情</a>
 									</li>
 								</ul>
 							</div>				

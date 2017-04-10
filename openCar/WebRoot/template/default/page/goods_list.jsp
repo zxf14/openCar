@@ -213,9 +213,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</br>日租：<span class="orange">￥${goods.userPrice}</span>/日均&nbsp;&nbsp;周租：<span class="orange">￥${goods.consPrice}</span>/日均&nbsp;&nbsp;月租：<span class="orange">￥${goods.vipPrice}</span>/日均&nbsp;&nbsp;</div>
 									<li class="oncl_mon_wid">
 										<div class="oncl_border_1 oncl_mon"><span class="or_blue span_cont">￥<span class="money_big">${goods.shopPrice}</span>/预交定金</span></div>
-<!-- 										<div class="mon_week">
-											<div class="left">日租：<span class="orange">￥${goods.userPrice}</span>/日均&nbsp;&nbsp;周租：<span class="orange">￥${goods.consPrice}</span>/日均&nbsp;&nbsp;月租：<span class="orange">￥${goods.vipPrice}</span>/日均</div>
-										</div>		 -->
 									</li>
 									<li class="rig_b">
 										<!--  <div class="shijijiage">价格<span>${goods.marketPrice}</span></div>-->
