@@ -59,6 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="address_list">
 					<ul id="address_list">
 						<c:forEach items="${addressList}" var="address" varStatus="status">
+							<input type="hidden" name="addressNames" value="${address.name}">
 							<li><input name="tem_address_id" type="radio" value="${address.id}">${address.name}-联系电话：${address.tel}-身份证号码：${address.address}</li>
 						</c:forEach>
 					</ul>
@@ -86,35 +87,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<input type="hidden" name="content" id="content" value=""/>
 				<input type="hidden" name="desc" id="desc" value=""/>
 				
-				<c:if test="${special!=null && special=='x'}">
+<%-- 				<c:if test="${special!=null && special=='x'}"> --%>
+<!-- 					<div class="order_car_infobox " style="margin-top:20px;"> -->
+<!-- 						<div class="left order_car_til">接送机</div> -->
+<!-- 						<div class="left order_car_full"></div> -->
+<!-- 						<div class="clear"></div> -->
+<!-- 						<div class="order_car_info order_car_inplay"> -->
+<%-- 							<input name="inner_price" id="inner_price" type="hidden" value="${goods.shopPrice}"> --%>
+<%-- 							<input name="outer_price" id="outer_price" type="hidden" value="${goods.marketPrice}"> --%>
+<!-- 							<div class="clear play_radio"> -->
+<!-- 								<select name="tem_desc" id="tem_desc" onchange="getOuterOrInner()"> -->
+<!-- 									<option value="">--接送机请选择--</option> -->
+<!-- 									<option value="1">三环内</option> -->
+<!-- 									<option value="2">三环外</option> -->
+<!-- 								</select> -->
+<!-- 								只有接送机的项目可以选择 -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<%-- 				</c:if> --%>
 					<div class="order_car_infobox " style="margin-top:20px;">
-						<div class="left order_car_til">接送机</div>
+						<div class="left order_car_til">订单信息</div>
 						<div class="left order_car_full"></div>
 						<div class="clear"></div>
 						<div class="order_car_info order_car_inplay">
 							<input name="inner_price" id="inner_price" type="hidden" value="${goods.shopPrice}">
 							<input name="outer_price" id="outer_price" type="hidden" value="${goods.marketPrice}">
 							<div class="clear play_radio">
-								<select name="tem_desc" id="tem_desc" onchange="getOuterOrInner()">
-									<option value="">--接送机请选择--</option>
-									<option value="1">三环内</option>
-									<option value="2">三环外</option>
+								<select name="tem_desc" id="tem_desc" onchange="getOuterOrInner()" style="height:30px;width:183px">
+									<option value="">--请选择租车类型--</option>
+									<option value="1">商务用车</option>
+									<option value="2">接机送机</option>
+									<option value="3">婚庆用车</option>
+									<option value="4">旅游用车</option>									
 								</select>
-								只有接送机的项目可以选择
 							</div>
+							<div class="clear"></div>
+							<div class="clear play_radio" >
+								<input type="text" name="time" id="time" class="down_list3" onClick="WdatePicker()" placeholder="选择时间">
+							</div>							
 						</div>
 					</div>
-				</c:if>
 				<div class="order_car_infobox " style="margin-top:20px;">
 					<div class="left order_car_til">优惠活动</div>
 					<div class="left order_car_full"></div>
 					<div class="clear"></div>
 					<div class="order_car_info order_car_inplay">
-						<c:forEach items="${couponList}" var="coupon" varStatus="status">
-							<div class="left play_yh_btn play_yh_action">${coupon.title}（${coupon.price}）</div>
-						</c:forEach>
+<%-- 						<c:forEach items="${couponList}" var="coupon" varStatus="status"> --%>
+<%-- 							<div class="left play_yh_btn play_yh_action">${coupon.title}（${coupon.price}）</div> --%>
+<%-- 						</c:forEach> --%>
 						<div class="clear play_radio">
-							使用 <input name="play_yh" class="renter_name" id="crrent_integel" value=""> 积分（当前积分：<font color="red">${ordinary_user.integel}分</font>，此商品可以使用${goods.integral}）${integel}个积分相当于1元钱<br />
+							<div class="order_car_moninfo"><input name="add_items" id="activity" type="checkbox" onchange="Check()"/>“泉”心“泉”意享暖冬（享受8折优惠）</div>
 						</div>
 					</div>
 				</div>
@@ -182,8 +205,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
   	<jsp:include  page="/template/${folder.tpl.folder}/page/foot.jsp"/> 
     <script type="text/javascript" src="<%=basePath%>template/${folder.tpl.folder}/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<%=basePath%>template/${folder.tpl.folder}/js/My97DatePicker/calendar.js"></script>
+	<script type="text/javascript" src="<%=basePath%>template/${folder.tpl.folder}/js/My97DatePicker/WdatePicker.js"></script>
 	<script type="text/javascript">
+
+    	function Check() {
+        	var prePrice = $("#price").val();
+        	var nowPrice = $("#price").val()*0.8;
+			if(document.getElementById("activity").checked){
+				document.getElementById("shiji_order").innerHTML = nowPrice;
+			} else {
+				document.getElementById("shiji_order").innerHTML = prePrice;
+			}
+        }
+		
 		function addAddress(){
+			var name = document.getElementsByName("name")[0].value;
+			var addNames = [];
+			var key = 1;
+			addNames = document.getElementsByName("addressNames");
+			for(var i=0;i<addNames.length;i++) {
+				if (name == addNames[i].value) {
+					key = 0;
+				}
+			}
+			if(key==0) {
+				alert("存在重复联系人");
+				return;
+			}
+			
 			var params= $('#addressForm').serialize();
 			$.ajax({
 				url:"<%=basePath%>front?tag=addAddress", //后台处理程序
@@ -194,11 +244,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					if(data.status==200){
 						$("#address_list").append("<li><input name=tem_address_id type=radio value="+data.addressId+">"+data.name+"-联系电话："+data.tel+"-身份证号码："+data.address+"</li>");
 						$("#addressForm")[0].reset();
-					}else{
-						alert(data.tip);
+						
 					}
+					alert(data.tip);
 				}
 			}); 
+
 		}
 		//选择租车人信息
 		(function(){
@@ -214,6 +265,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		function submit_order(){
 			var address_id=$("#address_id").val();
+			alert(address_id);
 			var my_accunt=${ordinary_user.integel};//我的积分
 			var goods_integral=${goods.integral};//本商品最多可以用多少积分兑换
 			var integel=${integel};//多少积分相当于一元

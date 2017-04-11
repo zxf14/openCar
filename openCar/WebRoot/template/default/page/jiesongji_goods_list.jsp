@@ -200,14 +200,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div>
 										<c:forEach items="${goods.attrList}" var="attr" varStatus="status">
 											<c:if test="${attr.name=='排量'}">
-												${attr.value}/
+												排量：${attr.value}
 											</c:if>
-											
+
 											<c:if test="${attr.name=='变速箱'}">
 												${attr.value}
 											</c:if>
 											<c:if test="${attr.name=='座位数' || attr.name=='座位'}">
-												${attr.value}
+												座位：${attr.value}&nbsp;&nbsp;
 											</c:if>
 										</c:forEach>
 										</br>${goods.goodsType.name}
@@ -246,19 +246,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script>
 	/*列表交互*/
 	+(function(){
-		$(function(){
-			$(".cartype_lis1").find(".oncl_mon_wid").hover(function(){
-				//alert();
-				_this = $(this);
-				_this.find(".oncl_mon").removeClass("oncl_border_1");
-				_this.find(".oncl_mon").addClass("oncl_border");
-				_this.find(".mon_week").show();
+// 		$(function(){
+// 			$(".cartype_lis1").find(".oncl_mon_wid").hover(function(){
+// 				//alert();
+// 				_this = $(this);
+// 				_this.find(".oncl_mon").removeClass("oncl_border_1");
+// 				_this.find(".oncl_mon").addClass("oncl_border");
+// 				_this.find(".mon_week").show();
 				
-			},function(){
-				_this.find(".oncl_mon").removeClass("oncl_border");
-	            _this.find(".oncl_mon").addClass("oncl_border_1");
-				_this.find(".mon_week").hide();
-			})
+// 			},function(){
+// 				_this.find(".oncl_mon").removeClass("oncl_border");
+// 	            _this.find(".oncl_mon").addClass("oncl_border_1");
+// 				_this.find(".mon_week").hide();
+// 			})
 			
 		/*
 		$(".cartype_lis1").find(".oncl_mon").hover(function(){

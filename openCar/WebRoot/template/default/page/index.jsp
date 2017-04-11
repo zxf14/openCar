@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<li class="left search_info">
 							<div class="left down_list1">选择门店<!--<span></span>--></div> 
 							<div class="left down_list2" onClick="showList()">选择服务类型</div>
-							<input type="text" name="time" id="time" class="left down_list3" onClick="WdatePicker()" placeholder="选择时间">
+							<input type="hidden" name="time" id="time" class="left down_list3" onClick="WdatePicker()" placeholder="选择时间" value="2017-04-04">
 							<ul class="list_store">
 								<jsp:useBean id="storeList" scope="page" class="com.weishang.my.bean.MyBean"/><!--商务用车 -->
 								<c:forEach items="${storeList.storeList}" var="store" varStatus="status">

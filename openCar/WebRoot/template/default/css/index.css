@@ -229,7 +229,7 @@ a {
 	cursor: pointer;
 	border-bottom: 1px solid #eee;
 }
-.down_list3{height:40px; line-height:40px; border:none;margin-top:5px;color:#323232;}
+.down_list3{height:28px;width:180px;line-height:30px;margin-top:5px;color:#323232;}
 /**discrib*/
 .header_discribe {
 	width: 1200px;
