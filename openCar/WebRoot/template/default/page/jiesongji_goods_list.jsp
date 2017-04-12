@@ -226,16 +226,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<!--循环结束-->
 					<div class="clear"></div>
 				</div>
-				<div class="paginationBox blue">
-                    <jsp:useBean id="paging" scope="page" class="com.weishang.bean.Page"/>
-					<jsp:setProperty property="user" value="user" name="paging"/>
-					<jsp:setProperty property="crrent" value="${pageNo}" name="paging"/>
-					<jsp:setProperty property="suffix" value="" name="paging"/>
-					<jsp:setProperty property="sumPage" value="${sum}" name="paging"/>
-					<jsp:setProperty property="color" value="red" name="paging"/>
-					<jsp:setProperty property="url" value="goods?brand_id=${brand_id}&type_id=${type_id}&cat_id=${cat_id}&menuId=${menuId}&price=${price}&order=${order}" name="paging"/>
-					${paging.pageString}
-                </div>
+<!-- 				<div class="paginationBox blue"> -->
+<%--                     <jsp:useBean id="paging" scope="page" class="com.weishang.bean.Page"/> --%>
+<%-- 					<jsp:setProperty property="user" value="user" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="crrent" value="${pageNo}" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="suffix" value="" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="sumPage" value="${sum}" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="color" value="red" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="url" value="goods?brand_id=${brand_id}&type_id=${type_id}&cat_id=${cat_id}&menuId=${menuId}&price=${price}&order=${order}" name="paging"/> --%>
+<%-- 					${paging.pageString} --%>
+<!--                 </div> -->
 			</div>
 			<!--右侧模块-->
 			<jsp:include  page="/template/${folder.tpl.folder}/page/web_right.jsp"/>
@@ -243,39 +243,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
   	<jsp:include  page="/template/${folder.tpl.folder}/page/foot.jsp"/> 
     <script type="text/javascript" src="<%=basePath%>template/${folder.tpl.folder}/js/jquery.min.js"></script>
-	<script>
-	/*列表交互*/
-	+(function(){
-// 		$(function(){
-// 			$(".cartype_lis1").find(".oncl_mon_wid").hover(function(){
-// 				//alert();
-// 				_this = $(this);
-// 				_this.find(".oncl_mon").removeClass("oncl_border_1");
-// 				_this.find(".oncl_mon").addClass("oncl_border");
-// 				_this.find(".mon_week").show();
-				
-// 			},function(){
-// 				_this.find(".oncl_mon").removeClass("oncl_border");
-// 	            _this.find(".oncl_mon").addClass("oncl_border_1");
-// 				_this.find(".mon_week").hide();
-// 			})
-			
-		/*
-		$(".cartype_lis1").find(".oncl_mon").hover(function(){
-				$ = $(this);
-				$(".oncl_mon").removeClass("oncl_border_1");
-	            $(".oncl_mon").addClass("oncl_border");
-				$(".mon_week").css("display","block");
-	        },function(){
-	            $(".oncl_mon").removeClass("oncl_border");
-	            $(".oncl_mon").addClass("oncl_border_1");
-				$(".mon_week").css("display","none");
-	        });
-		*/
-			
-		});
-	})();
-	
-	</script>
+
   </body>
 </html>
