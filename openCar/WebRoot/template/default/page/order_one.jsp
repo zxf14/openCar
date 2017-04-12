@@ -265,7 +265,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		function submit_order(){
 			var address_id=$("#address_id").val();
-			alert(address_id);
 			var my_accunt=${ordinary_user.integel};//我的积分
 			var goods_integral=${goods.integral};//本商品最多可以用多少积分兑换
 			var integel=${integel};//多少积分相当于一元
