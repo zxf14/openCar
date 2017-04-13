@@ -12,22 +12,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <dt><div class="d1">个人资料</div></dt>
                         <dd><a href="<%=basePath%>pc/pcGoUserPass">修改密码</a></dd>
                         <dd><a href="<%=basePath%>pc/pcUserIndex">基本资料</a></dd>
-                        <dd><a href="<%=basePath%>pc/pcUserAddress">收货地址</a></dd>
+                        <dd><a href="<%=basePath%>pc/pcUserAddress">联系方式</a></dd>
                     </dl>
                     <dl>
                         <dt><div class="d4">订单管理</div></dt>
                         <dd><a href="<%=basePath%>pc/pcUserOrder?flag=1">预订单</a></dd>
                         <dd><a href="<%=basePath%>pc/pcUserOrder?flag=2">订单</a></dd>
-                    </dl>
-                    <dl>
-                        <dt><div class="d3">优惠券</div></dt>
-                        <dd><a href="<%=basePath%>pc/pcUsercoupon">我的优惠券</a></dd>
-                        <dd><a href="<%=basePath%>pc/pcUserGetCoupon">领取优惠券</a></dd>
-                    </dl>
-                    <dl>
-                        <dt><div class="d2">财务管理</div></dt>
-                        <dd><a href="<%=basePath%>pc/pcUserMoney">我的消费记录</a></dd>
-                        <dd><a href="<%=basePath%>user/commonUserAction?tag=goUserIntegel">我的积分</a></dd>
                     </dl>
                 </div>
             </div>

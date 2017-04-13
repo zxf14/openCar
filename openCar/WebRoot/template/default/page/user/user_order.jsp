@@ -55,11 +55,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			                	</div>
 			                	<!-- <td class="pl20">${order.no}</td>		 -->
 				                              
-				                <td >${order.goodsName}</td>
-				                <td >${order.money}</td>
-				                <td>${order.serviceDate}</td>
+				                <td align="center">${order.goodsName}</td>
+				                <td align="center">${order.money}</td>
+				                <td align="center">${order.serviceDate}</td>
 				                <td align="center">${order.address_person}</td>
-				                <td>${order.address_content}</td>
+				                <td align="center">${order.address_content}</td>
 				                <td align="center">${order.address_tel}</td>
 				                <td align="center">
 					                <c:if test="${order.flag==1}">
