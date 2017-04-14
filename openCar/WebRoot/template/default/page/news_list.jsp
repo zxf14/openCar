@@ -67,16 +67,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="clear"></div>		
 				</div>
 				<div class="clear"></div>
-				<div class="paginationBox blue">
-                    <jsp:useBean id="paging" scope="page" class="com.weishang.bean.Page"/>
-					<jsp:setProperty property="user" value="user" name="paging"/>
-					<jsp:setProperty property="crrent" value="${pageNo}" name="paging"/>
-					<jsp:setProperty property="suffix" value="" name="paging"/>
-					<jsp:setProperty property="sumPage" value="${sum}" name="paging"/>
-					<jsp:setProperty property="color" value="red" name="paging"/>
-					<jsp:setProperty property="url" value="goods?brand_id=${brand_id}&type_id=${type_id}&cat_id=${cat_id}&menuId=${menuId}&price=${price}&order=${order}" name="paging"/>
-					${paging.pageString}
-                </div>
+<!-- 				<div class="paginationBox blue"> -->
+<%--                     <jsp:useBean id="paging" scope="page" class="com.weishang.bean.Page"/> --%>
+<%-- 					<jsp:setProperty property="user" value="user" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="crrent" value="${pageNo}" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="suffix" value="" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="sumPage" value="${sum}" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="color" value="red" name="paging"/> --%>
+<%-- 					<jsp:setProperty property="url" value="goods?brand_id=${brand_id}&type_id=${type_id}&cat_id=${cat_id}&menuId=${menuId}&price=${price}&order=${order}" name="paging"/> --%>
+<%-- 					${paging.pageString} --%>
+<!--                 </div> -->
 			</div>
 			<!--右侧模块-->
 			<jsp:include  page="/template/${folder.tpl.folder}/page/web_right.jsp"/>
