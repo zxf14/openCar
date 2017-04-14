@@ -29,13 +29,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	        <!-- 单元内容 新增地址 -->
                 <div class="user-bd-main add-address">
                     <!-- 标题 -->
-                    <div class="user-bd-main-title">新增地址：</div>
+                    <div class="user-bd-main-title">新增联系人</div>
 
                     <!-- 新增地址 表单 -->
                     <div class="add-address-form">
                         <form name="addressForm" id="addressForm" action="javascript:void(0)" method="post">
                             <div class="formRow clearfix">
-                                <span class="tag">联系人：</span>
+                                <span class="tag">联系人姓名：</span>
                                 <input class="sAddress" name="name" type="text">
                             </div>
                             <div class="formRow clearfix">
@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <input class="dAddress" name="address" type="text">
                             </div>
                             <div class="formRow clearfix">
-                                <span class="tag">联系电话：</span>
+                                <span class="tag">联系人电话：</span>
                                 <input class="phoneNum" name="tel" type="text">
                             </div>
                             <input class="btn-sub" type="submit" onClick="addAddress()" value="保存">
@@ -53,11 +53,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <!-- 地址列表 -->
                     <div class="add-address-list">
                         <!-- 标题 -->
-                        <div class="title clearfix">地址<!--<a class="btn-add-address" href="javascript: void(0)">新增收货地址</a>--></div>
+                        <div class="title clearfix">已有联系人<!--<a class="btn-add-address" href="javascript: void(0)">新增收货地址</a>--></div>
                         <!-- 表格 -->
-                        <table>
+                        <table >
                             <tr>
-                                <th>联系人</th>
+                                <th>联系人姓名</th>
                                 <th>身份证号码</th>
                                 <th>联系方式</th>
                                 <th>操作</th>
@@ -67,8 +67,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <td>${address.name}</td>
                                 <td>${address.address}</td>
                                 <td>${address.tel}</td>
-                                <td class="operate">  
-                                    <a href="javascript:void(0)" onClick="deleteAddress(${address.id})">删除</a>
+                                <td class="operate" style="text-align:center;" >  
+                                    <a href="javascript:void(0)" onClick="deleteAddress(${address.id})" >删除</a>
                                 </td>
                             </tr>
                             </c:forEach> 
