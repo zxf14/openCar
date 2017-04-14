@@ -200,7 +200,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div>
 										<c:forEach items="${goods.attrList}" var="attr" varStatus="status">
 											<c:if test="${attr.name=='排量'}">
-												排量：${attr.value}
+												排量：${attr.value}mL
 											</c:if>
 
 											<c:if test="${attr.name=='变速箱'}">
@@ -244,5 +244,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<jsp:include  page="/template/${folder.tpl.folder}/page/foot.jsp"/> 
     <script type="text/javascript" src="<%=basePath%>template/${folder.tpl.folder}/js/jquery.min.js"></script>
 
+	<script type="text/javascript">
+		
+	</script>
   </body>
 </html>

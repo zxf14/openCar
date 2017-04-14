@@ -199,7 +199,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div>
 										<c:forEach items="${goods.attrList}" var="attr" varStatus="status">
 											<c:if test="${attr.name=='排量'}">
-												排量：${attr.value}
+												排量：${attr.value}mL
 											</c:if>
 
 											<c:if test="${attr.name=='变速箱'}">

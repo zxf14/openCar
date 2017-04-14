@@ -21,7 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="${recept.keywords}">
 	<meta http-equiv="description" content="${recept.descript}">
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>template/${folder.tpl.folder}/css/index.css">
-  	<link rel="stylesheet" type="text/css" href="<%=basePath%>template/${folder.tpl.folder}/css/page.css">
   </head>
   
   <body>
@@ -58,6 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</c:forEach>
 				<div class="clear"></div>
+<<<<<<< HEAD
 				<%-- <div class="paginationBox blue">
                     <jsp:useBean id="paging" scope="page" class="com.weishang.bean.Page"/>
 					<jsp:setProperty property="user" value="user" name="paging"/>
@@ -68,6 +68,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<jsp:setProperty property="url" value="goods?brand_id=${brand_id}&type_id=${type_id}&cat_id=${cat_id}&menuId=${menuId}&price=${price}&order=${order}" name="paging"/>
 					${paging.pageString}
                 </div> --%>
+=======
+>>>>>>> refs/remotes/origin/master
 			</div>
 			<!--右侧模块-->
 			<jsp:include  page="/template/${folder.tpl.folder}/page/web_right.jsp"/>
