@@ -7,7 +7,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <div class="right sales_type_more">
-				<div class="sales_more_til" >精彩活动<a href="<%=basePath%>jingcaihuodong/22.html" class="right">更多&gt;&gt;</a></div>
+				<div class="sales_more_til" >精彩活动<a href="<%=basePath%>jingcaihuodong/22.html" class="right"></a></div>
 				<ul class="sales_more_play">
 					<jsp:useBean id="active" scope="page" class="com.weishang.bean.ReceptBean"/><!-- 精彩活动-->
 					<jsp:setProperty property="pageNo" value="1" name="active"/>
